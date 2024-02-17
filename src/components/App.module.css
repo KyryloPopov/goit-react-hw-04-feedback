@@ -1,0 +1,9 @@
+.app {
+  padding: 20px;
+}
+
+.app > h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

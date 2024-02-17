@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Statistics } from './Statistics/Statistics';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Notification } from './Notification/Notification';
+import css from './App.module.css';
 
 export const App = () => {
   const [good, setGood] = useState(0);
@@ -16,7 +17,7 @@ export const App = () => {
   };
 
   const countPositiveFeedbackPercentage = () => {
-    const total = this.countTotalFeedback();
+    const total = countTotalFeedback();
     const positivePercent = (good * 100) / total;
     return Math.round(positivePercent);
   };
@@ -39,9 +40,9 @@ export const App = () => {
   };
 
   return (
-    <div>
+    <div className={css.app}>
       <FeedbackOptions options={options} onLeaveFeedback={handleClick} />
-      <h2>stats</h2>
+      <h2>Stats</h2>
       {countTotalFeedback() > 0 ? (
         <Statistics
           good={good}
